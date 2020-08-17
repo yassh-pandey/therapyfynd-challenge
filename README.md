@@ -1,5 +1,24 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requirements specified 
+User operations
+- A user sign up/log in
+- A user can post a twitter-like 2-sentence text post. 
+- A user can see his own list of posts 
+- A user can see a list of other users 
+- A user can follow another user
+- So if you follow 3 users, and each of them has posted 10 messages, a particular user's feed will show 30 messages in the order in which they were posted along with timestamps.
+## Design specifications
+- User sign up page:
+![Sign Up](https://github.com/yassh-pandey/therapyfynd-challenge/blob/master/design%20specification/Sign%20up.png)
+- User login page:
+![Log In](https://github.com/yassh-pandey/therapyfynd-challenge/blob/master/design%20specification/Log%20in.png)
+- How the feed should look:
+![Feed](https://github.com/yassh-pandey/therapyfynd-challenge/blob/master/design%20specification/Feed.png)
+- User's Profile: 
+![User profile](https://github.com/yassh-pandey/therapyfynd-challenge/blob/master/design%20specification/profile_posts.png)
+### Also check out other assets in the design specification folder that better describe how the expected UI should look like.
+
 ## Available Scripts
 
 In the project directory, you can run:
