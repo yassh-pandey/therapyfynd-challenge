@@ -14,9 +14,7 @@ const feedReducer = (state, action)=>{
                 feed: [],
                 followers: [], 
                 following: [],
-                initialStateFetched: action.payload.initialStateFetched,  initialFeedFetched: action.payload.initialFeedFetched}
-        case "ADD_TWEET":
-            return {...state, posts: [action.payload.tweet, ...state.posts]};
+                initialStateFetched: action.payload.initialStateFetched,  initialFeedFetched: action.payload.initialFeedFetched};
         case "ADD_USER":
             return {...state, users: [action.payload.user, ...state.users]};
         case "ADD_FOLLOWING": 
@@ -30,6 +28,8 @@ const feedReducer = (state, action)=>{
             return  {...state, feed: [action.payload.tweet, ...state.feed]};
         case "SET_FEED":
             return {...state, feed: action.payload.feed};
+        case "ADD_TO_POSTS":
+            return {...state, posts: [action.payload.post, ...state.posts]};
         case "SET_INITIAL_FEED_FETCHED":
             return {...state, initialFeedFetched: action.payload.initialFeedFetched};
         default: 

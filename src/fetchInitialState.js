@@ -27,7 +27,7 @@ const fetchInitialState = async ()=>{
             });
         });
         await firebase.firestore().collection("posts").where(`tweetedBy`,"==", `${firebase.auth().currentUser?.email}`)
-        .orderBy("postedAt")
+        .orderBy("postedAt", "desc")
         .get()
         .then(querySnapshot=>{
             querySnapshot.forEach(doc=>{
@@ -73,25 +73,6 @@ const fetchInitialState = async ()=>{
         };
     }
     else{
-        // const users = [];
-        // await firebase.firestore().collection("users").get()
-        // .then(querySnapshot=>{
-        //     querySnapshot.forEach(doc=>{
-        //         users.push({
-        //             email: doc.id,
-        //             name: doc.name,
-        //             followers: doc.followers,
-        //             following: doc.following
-        //         });
-        //     });
-        // });
-        // return {
-        //     users,
-        //     currentUser: {
-        //         followers: [],
-        //         following: []
-        //     }
-        // }
         return null;
     }
 }

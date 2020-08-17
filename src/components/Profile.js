@@ -71,8 +71,8 @@ function Profile() {
                     <div className="Profile__name">{firebase.auth().currentUser.displayName}</div>
                     <div className="Profile__info">
                         <div className="postsCount">Posts: {feedContext.feedState.posts.length}</div>
-                        <div className="followersCount">Followers: {feedContext.feedState.following.length}</div>
-                        <div className="followingCount">Following: {feedContext.feedState.followers.length}</div>
+                        <div className="followersCount">Followers: {feedContext.feedState.followers.length}</div>
+                        <div className="followingCount">Following: {feedContext.feedState.following.length}</div>
                     </div>
                 </div>
                 <div className="Profile__tabBarContainer">

@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import {Link, useHistory} from "react-router-dom"
 import firebase from '../firebaseConfig'
 import '../styles/SignUp.css'
+import FeedContext from '../contexts/FeedContext'
 
 function SignUp() {
     const history = useHistory();
+    const feedContext = useContext(FeedContext);
     const [signUpFormState, setSignUpFormState] = useState({
         name: "",
         email: "",
@@ -30,6 +32,7 @@ function SignUp() {
         else{
             firebase.auth().createUserWithEmailAndPassword(signUpFormState.email, signUpFormState.password)
             .then((result)=>{
+                feedContext.feedDispatch({type: "LOGIN_BYPASS_ROUTE_GUARD"});
                return result.user.updateProfile({displayName: signUpFormState.name});
             })
             .then(async ()=>{

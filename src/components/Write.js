@@ -31,7 +31,6 @@ function Write() {
                 postedAt: currentTime
             })
             .then((doc)=>{
-                feedContext.feedDispatch({type: "ADD_TWEET", payload: {tweet}});
                 feedContext.feedDispatch({type: "ADD_TO_FEED", payload: {
                     tweet: {
                         name: `${firebase.auth().currentUser.displayName}`,
@@ -41,6 +40,17 @@ function Write() {
                         tweet
                     }
                 }});
+                feedContext.feedDispatch({
+                    type: "ADD_TO_POSTS",
+                    payload: {
+                        post: {
+                            id: `${doc.id}`,
+                            postedAt: timeObject,
+                            tweetedBy: `${firebase.auth().currentUser.email}`,
+                            tweet
+                        }
+                    }
+                })
                 history.push("/feed")
 
             })
