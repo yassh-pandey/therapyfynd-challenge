@@ -1,0 +1,77 @@
+:root{
+    --navlink-default-color: #e4e4e4;
+    --navlink-on-hover-color: #999999;
+}
+.Nav__Container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0px 2px 10px -2px rgba(1,1,1,0.2);
+    flex-wrap: wrap;
+    padding: 1.2rem;
+    position: relative;
+    min-width: 320px;
+}
+.Nav__Container .Nav__logo{
+    flex-grow: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--button-pink-bg);
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 0px 2rem;
+    margin-left: 6rem;
+    user-select: none;
+}
+.Nav__Container .Nav__item{
+    font-weight: bold;
+}
+.Nav__Container .Nav__item a{
+    padding: 0.5rem 2rem;
+    color: var(--navlink-default-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-flex;
+    font-size: 1.1rem;
+    width: 100%;
+}
+.Nav__Container .Nav__item a:hover, .Nav__signOutButton:hover{
+    color: var(--navlink-on-hover-color);
+}
+.Nav__signOutButton{
+    margin-left: 10rem;
+    margin-right: 4rem;
+    color: var(--navlink-default-color);
+    padding: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.Nav__Container .Nav__item a.Nav__itemSelected{
+    color: var(--button-pink-bg);
+}
+@media only screen  
+  and (max-device-width: 850px)
+{
+    .Nav__Container{
+        padding: 0rem;
+        justify-content: flex-start;
+        min-width: 320px;
+    }
+    .Nav__Container .Nav__logo{
+        margin-top: 1rem;
+        margin-left: 0rem;
+        width: 100%;
+    }
+    .Nav__Container .Nav__item{
+        margin-top: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+    .Nav__Container .Nav__item a{
+        font-size: 1rem;
+    }
+    .Nav__Container .Nav__signOutButton{
+        margin: 0px;
+        position: absolute;
+        top: 0.5rem;
+        right: 1.2rem;
+    }
+}

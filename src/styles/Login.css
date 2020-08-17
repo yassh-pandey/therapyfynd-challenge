@@ -1,0 +1,129 @@
+:root{
+    --visibility-icon-color: #8192a5;
+    --error-color: #dc3545;
+}
+.LogIn__container{
+    background-image: url(../assets/bgImage.png);
+    background-position: bottom 30px right;
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    min-width: 320px;
+}
+.LogIn__navContainer{
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: calc(12.5%);
+}
+.LogIn__navContainer .LogIn__websiteLogo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--logo-color);
+    margin-bottom: 1.5rem;
+}
+.LogIn__navContainer .LogIn__signUpButton a{
+    display: inline-block;
+    color: var(--white-bg-btn-color);
+    padding: 0.6rem 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: max-content;
+    border: thin solid var(--white-bg-btn-border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.LogIn__formTitleWrapper{
+    grid-row: 3 / -1;
+    grid-column: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 6rem;
+}
+.LogIn__title{
+    align-self: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--title-color);
+    margin-left: calc(50% - 25%);
+    margin-bottom: 2.3rem;
+}
+.LogIn__formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+}
+.LogIn__formContainer > input, .LogIn__formContainer .LogIn__passwordIconWrapper > input{
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    background-color: var(--input-bg-color);
+    border: none;
+    padding: 1rem;
+    margin: 1rem 0px;
+    border-radius: 5px;
+}
+.LogIn__passwordIconWrapper{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.LogIn__visibilityIcon{
+    position: absolute;
+    right: 2.5rem;
+    color: transparent;
+    text-shadow: 0 0 0px var(--visibility-icon-color);
+}
+.LogIn__logInButton{
+    color: white;
+    background-color: var(--button-pink-bg);
+    padding: 0.7rem 1.6rem;
+    width: max-content;
+    align-self: flex-end;
+    margin-right: calc(50% - 25%);
+    border-radius:5px;
+    box-shadow: 2px 2px 4px -2px rgba(1,1,1,0.3);
+    cursor: pointer;
+    margin-top: 1rem;
+    user-select: none;
+}
+.LogIn__error{
+    color: var(--error-color);
+}
+@media (max-width: 850px)
+{
+    .LogIn__container{
+        background-color: rgba(1,1,1,0.1);
+        background-blend-mode: multiply;
+    }
+    .LogIn__navContainer{
+        margin-left: 5%;
+    }
+    .LogIn__formTitleWrapper{
+        grid-column: 1 / -1;
+        margin-top: 4rem;
+    }
+    .LogIn__title{
+        margin-left: 5%;
+        text-shadow: 0px 0px 2px rgba(255, 255, 255, 1);
+    }
+    .LogIn__formContainer{
+        width: 90%;
+    }
+    .LogIn__logInButton{
+        margin-left: 0%;
+        margin-right: 5%;
+    }
+}

@@ -1,0 +1,153 @@
+:root{
+    --not-active-tabBar-color: #b6b6b6;
+}
+.Profile__container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.Profile__header{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    height: 12rem;
+    margin-top: 1rem;
+    background-color: #fefefe;
+}
+
+.Profile__avatar{
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 4;
+    place-self: center;
+    background-image: url(../assets/default_profile.png);
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-size: contain;
+    border: thin solid var(--avatar-border-color);
+}
+.Profile__name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    grid-column: 6 / -1;
+    grid-row: 1 / span 4;
+    align-self: center;
+    color: var(--user-card-active-text-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Profile__info{
+    display: flex;
+    grid-column: 6 / -1;
+    grid-row: 5 / -1;
+}
+.Profile__info > * {
+    padding: 0px 1rem;
+    color: #c4c4c4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.postsCount{
+    padding-left: 0px;
+}
+.Profile__tabBarContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;   
+}
+.Profile__tabBar{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Profile__tabBar__tabItem{
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    color: inherit;
+}
+.Profile__tabBar__tabItem span{
+    margin-right: 0.5rem; 
+    color: inherit;  
+}
+.Profile__contentContainer{
+    display: flex;
+    justify-content: center;
+}
+.Profile__mountedComponentContainer{
+    width: 50%;
+    height: 10rem;
+}
+.Profile__tabPositionIndicator{
+    width: 50%;
+    height: 1.6px;
+    background-color: #b6b6b6;
+    position: relative;
+}
+.Profile__tabPositionIndicatorActiveTab{
+    position: absolute;
+    background-color: var(--user-card-active-text-color);
+    width: calc(17%);
+    height: 3.6px;
+    border-radius: 6px;
+    left: calc(100% / 12);
+    top: -1px;
+    transition: all 300ms ease-in-out;
+}
+.Profile__container .Profile__contentContainer .FeedCard__container, .Profile__container .Profile__contentContainer .User__container{
+    width: 100%;
+    margin-top: 0rem;
+}
+.Profile__container .Profile__contentContainer .FeedCard__container:first-of-type{
+    margin-top: 2rem;
+}
+
+@media (max-width: 850px)
+{
+    .Profile__header{
+        height: 6rem;
+    }
+    .Profile__avatar{
+        grid-column: 2 / span 2;
+        width: 3rem;
+        height: 3rem;
+    }
+    .Profile__name{
+        grid-column: 4 / -1;
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+    .Profile__info{
+        grid-column: 1 / -1;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .Profile__info > *{
+        padding: 0px;
+        font-size: 0.85rem;
+    }
+    .Profile__tabPositionIndicator{
+        width: 100%;
+    }
+    .Profile__tabBar{
+        width: 100%;
+    }
+    .Profile__mountedComponentContainer{
+        width: 100%;
+    }
+    .Profile__tabBar__tabItem{
+        padding: 1rem 0px;
+        font-size: 0.8rem;
+    }
+    .Profile__tabBar__tabItem span{
+        font-size: 1rem;
+    }
+}

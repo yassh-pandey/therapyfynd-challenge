@@ -1,0 +1,102 @@
+.FeedCard__container{
+    min-width: 320px;
+    width: 40%;
+    min-height: 14rem;
+    padding-bottom: 2rem;
+    margin: 1.5rem 0px;
+    border-radius: 8px;
+    position: relative;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    box-shadow: 0px 0px 14px -4px rgba(1,1,1,0.3);
+}
+.FeedCard__container::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--button-pink-bg);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    top: calc(50% - 25px);
+    right: -25px;
+}
+.FeedCard__container:first-of-type{
+    margin-top: 7rem;
+}
+.FeedCard__avatar{
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 1;
+    place-self: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(../assets/default_profile.png);
+    border: thin solid var(--avatar-border-color);
+    background-repeat: no-repeat;
+}
+.FeedCard__name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 2;
+    align-self: end;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--user-card-active-text-color);
+    margin-left: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.FeedCard__tweet{
+    grid-row: 3 / -1;
+    grid-column: 2 / 6;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-family: serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #9b9b9b;
+    padding-top: 0.5rem;
+}
+.FeedCard__time{
+    grid-row: 1 / span 2;
+    grid-column: 5 / -1;
+    justify-self: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: end;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+@media (max-width: 850px)
+{
+    .FeedCard__container{
+        width: 100%;
+        padding-top: 0rem;
+        margin: 1rem 0px;
+    }
+    .FeedCard__avatar{
+        width: 3rem;
+        height: 3rem;
+        align-self: center;
+    }
+    .FeedCard__name{
+        grid-column: 2 / span 3;
+        font-size: 1.1rem;
+    }
+    .FeedCard__tweet{
+        text-align: left;
+        margin-top: 1rem;
+        padding-top: 0rem;
+        font-size: 0.9rem;
+    }
+    .FeedCard__time{
+        font-size: 0.8rem;
+    }
+}
